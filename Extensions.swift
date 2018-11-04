@@ -104,7 +104,7 @@ public extension Tortoise {
         self.left(60)
     }
     //start drawing n
-    func uppercaseN() {
+    func LowercaseN() {
         self.setY(78)
         self.right(40)
 
@@ -123,7 +123,7 @@ public extension Tortoise {
 
     }
     //start drawing s
-    func uppercaseS() {
+    func LowercaseS() {
         self.setY(14)
         self.right(20)
         self.penDown()
@@ -132,16 +132,14 @@ public extension Tortoise {
         self.forward(60)
         self.curve(withSize: 20, withSize: 8, drawSides: 15)
         self.penDown()
-        self.forward(60)
+        self.forward(40)
         self.penUp()
         self.setY(0)
         self.left(30)
         }
     //start drawing t
-    func uppercaseT() {
-        self.right(30)
-        self.penDown()
-        self.forward(50)
+    func LowercaseT() {
+
         self.left(40)
         self.setY(0)
         self.curve(withSize: -40, withSize: 20, drawSides: 3)
@@ -153,7 +151,7 @@ public extension Tortoise {
         self.setY(0)
     }
     //start drawing O
-    func uppercaseO(){
+    func LowercaseO(){
         self.setY(53)
         self.right(90)
         self.curve(withSize: -10, withSize: 10, drawSides: 6)
@@ -166,28 +164,38 @@ public extension Tortoise {
         self.setY(0)
         self.left(90)
     }
-    func uppercaseE(){
+    func LowercaseE(){
         self.setY(53)
         self.penDown()
         self.right(80)
         self.forward(40)
         self.curve(withSize: -10, withSize: 10, drawSides: 5)
-        self.curve(withSize: -20, withSize: 15, drawSides: 13)
+        self.curve(withSize: -20, withSize: 15, drawSides: 12)
         self.penDown()
-        self.forward(50)
+        self.left(17)
+        self.forward(60)
         self.penUp()
         self.setY(0)
         self.left(15)
         
     }
-    func uppercaseZ(){
-        self.setY(60)
+    func LowercaseZ(){
+        self.setY(55)
         self.right(88)
         self.penDown()
         self.forward(50)
         self.right(135)
         self.forward(80)
         self.left(135)
-        self.forward(60)
+        self.forward(70)
+        self.right(110)
+        self.penDown()
+        self.forward(50)
+        self.curve(withSize: 20, withSize: 8, drawSides: 15)
+        self.penDown()
+        self.forward(40)
+        self.penUp()
+        self.setY(0)
+        self.left(30)
     }
 }

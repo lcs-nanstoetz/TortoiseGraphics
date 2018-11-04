@@ -11,7 +11,8 @@ PlaygroundPage.current.liveView = canvas
 // start drawing
 canvas.drawing { t in
     t.penUp()
-    t.penSize(2)
+    t.hideTortoise()
+    t.penSize(4)
     t.goto(-390, 0)
     t.uppercaseA()
     t.LowercaseN()

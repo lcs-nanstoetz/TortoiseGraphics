@@ -198,4 +198,16 @@ public extension Tortoise {
         self.setY(0)
         self.left(30)
     }
+    func randomLines(lineSize size : Double) {
+        
+        let xPos = self.random(size) - size / 2
+        let yPos = self.random(size) - size / 2
+        self.goto(xPos, yPos)
+        self.penDown()
+        let XPos = self.random(size) - size / 2
+        let YPos = self.random(size) - size / 2
+        self.goto(XPos,YPos)
+        self.penUp()
+
+    }
 }

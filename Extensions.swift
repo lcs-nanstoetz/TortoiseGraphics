@@ -1,3 +1,5 @@
+import Foundation
+
 public extension Tortoise {
     // square
     func square(withSize size: Double) {
@@ -10,7 +12,7 @@ public extension Tortoise {
     }
     //make a curve
     func curve (withSize sideCount: Int, withSize size: Double, drawSides sideLimit: Int) {
-
+        
         self.penDown()
         for _ in 1...sideLimit {
             self.forward(size)
@@ -20,85 +22,85 @@ public extension Tortoise {
     }
     //drawing R
     func uppercaseR() {
-
+        
         //make the turtle face the right side
         self.setHeading(90)
-
+        
         //starting tail
         self.curve(withSize: -85, withSize: 1, drawSides: 16)
-
+        
         //loop up
         self.curve(withSize: -30, withSize: 15, drawSides: 5)
-
+        
         //Turn around
         self.right(180)
-
+        
         //moving down
         self.curve(withSize: 50, withSize: 7, drawSides: 10)
-
+        
         //Turn around
         self.curve(withSize: 60, withSize: 1, drawSides: 21)
-
+        
         //Move up
         self.curve(withSize: 40, withSize: 10, drawSides: 10)
-
+        
         //turn back to stick
         self.curve(withSize: 24, withSize: 8, drawSides: 16)
-
+        
         //loop around
         self.curve(withSize: 20, withSize: 1, drawSides: 12)
-
+        
         //loop down
         self.curve(withSize: -40, withSize: 10, drawSides: 7)
-
+        
         //set position to neutral to start
         //note how the y position is very close to 0 again
         //direction of 90 degrees (facing right) and y position of 0 means
         //connecting to next letter will work nicely
         self.setHeading(90)
     }
-
+    
     //drawing A
     func uppercaseA(scaleFactor scale: Double = 1.0) {
-
+        
         //make the turtle go up
         self.penUp()
         self.forward(20 * scale)
-
+        
         //make a curve to start the A
         self.penDown()
         self.right(180)
         self.curve(withSize: -15, withSize: 12 * scale, drawSides: 8)
-
+        
         //make turte go up
         self.penDown()
         self.right(20)
         self.forward(60 * scale)
-
+        
         //make a circle
         self.right(20)
         self.curve(withSize: -14, withSize: 15 * scale, drawSides: 15)
-
+        
         //make the top of the A
         self.right(70)
         self.penDown()
         self.forward(100 * scale)
-
+        
         //make the turtle go down
         self.penDown()
         self.right(120)
         self.setY(0)
-
+        
         self.right(100)
         self.forward(115 * scale)
-
+        
         self.right(30)
         self.curve(withSize: -7, withSize: 15 * scale, drawSides: 7)
-
+        
         self.penDown()
         self.right(110)
         self.forward(115 * scale)
-
+        
         self.penUp()
         self.setY(0)
         self.left(60)
@@ -107,9 +109,9 @@ public extension Tortoise {
     func LowercaseN(scaleFactor scale: Double = 1.0) {
         self.setY(78)
         self.right(40)
-
+        
         self.curve(withSize: 10, withSize: 7 * scale, drawSides: 3)
-
+        
         self.penDown()
         self.setY(0)
         self.setY(75 * scale)
@@ -120,7 +122,7 @@ public extension Tortoise {
         self.curve(withSize: -10, withSize: 10 * scale, drawSides: 5)
         self.penUp()
         self.setY(0)
-
+        
     }
     //start drawing s
     func LowercaseS(scaleFactor scale: Double = 1.0) {
@@ -136,10 +138,10 @@ public extension Tortoise {
         self.penUp()
         self.setY(0)
         self.left(30)
-        }
+    }
     //start drawing t
     func LowercaseT(scaleFactor scale: Double = 1.0) {
-
+        
         self.left(40)
         self.setY(0)
         self.curve(withSize: -40, withSize: 20 * scale, drawSides: 3)
@@ -198,16 +200,86 @@ public extension Tortoise {
         self.setY(0)
         self.left(30)
     }
-    func randomLines(lineSize size : Double) {
+    func randomLines(withinRadius radius : Double) {
         
-        let xPos = self.random(size) - size / 2
-        let yPos = self.random(size) - size / 2
-        self.goto(xPos, yPos)
+        // Make the line size be twice the radius
+        let size = radius * 2
+        
+        // Make sure the point generated is inside the circle
+        var x1 = 0.0
+        var y1 = 0.0
+        repeat {
+            x1 = self.random(size) - size / 2
+            y1 = self.random(size) - size / 2
+        } while outsideCircle(radius: radius, xPos: x1, yPos: y1)
+        
+        // Now go to the starting point
+        self.goto(x1, y1)
         self.penDown()
-        let XPos = self.random(size) - size / 2
-        let YPos = self.random(size) - size / 2
-        self.goto(XPos,YPos)
+        
+        // Make sure the endpoint is in the circle
+        var x2 = 0.0
+        var y2 = 0.0
+        repeat {
+            
+            x2 = self.random(size) - size / 2
+            y2 = self.random(size) - size / 2
+            
+        } while outsideCircle(radius: radius, xPos: x2, yPos: y2)
+        
+        // draw the line to the endpoint
+        self.goto(x2,y2)
+        
         self.penUp()
-
+        
     }
+    
+    func outsideCircle(radius : Double, xPos : Double, yPos : Double) -> Bool {
+        let distance = sqrt(xPos * xPos + yPos * yPos)
+        if distance > radius {
+            return true
+        } else {
+            return false
+        }
+    }
+    // Adjust course to the left a bit
+    self.penUp()
+    self.forward(10)
+    self.right(5)
+    self.forward(10)
+    self.right(5)
+    
+    // Draw a dashed circle
+    for _ in 1...36 {
+    self.penUp()
+    self.forward(9)
+    self.right(5)
+    self.penDown()
+    self.forward(11)
+    self.right(5)
+    }
+    // Move drawing left a bit
+    self.penUp()
+    self.right(90)
+    self.backward(50)
+    self.left(90)
+    self.penDown()
+    self.penSize(2)
+    
+    // Draw 18 dashed circles
+    for _ in 1...18 {
+    dashedCircle(with: turtle)
+    self.right(10)
+    }
+    // Draw 18 small circles rotated around the origin
+    for _ in 1...18 {
+    self.right(20)
+    
+    // Draw a small circle
+    for _ in 1...18 {
+    self.right(20)
+    self.forward(20)
+    
+    }
+
 }

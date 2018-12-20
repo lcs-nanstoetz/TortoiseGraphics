@@ -47,7 +47,21 @@ canvas.drawing { turtle in
     turtle.forward(30)
     turtle.penUp()
     
+    //draw cloud
+    turtle.goto(-130,100)
+    turtle.left(50)
+    for _ in 1...3 {
+        turtle.curve(withSize: -30, withSize: 5, drawSides: 15)
+        turtle.right(140)
+    }
+    turtle.left(60)
+    for _ in 1...3 {
+        turtle.curve(withSize: -30, withSize: 5, drawSides: 15)
+        turtle.right(140)
+    }
+    turtle.penUp()
     
+   
 }
 
 

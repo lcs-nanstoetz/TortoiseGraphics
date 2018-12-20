@@ -61,7 +61,26 @@ canvas.drawing { turtle in
     }
     turtle.penUp()
     
-   
+    //draw house
+    turtle.goto(80,0)
+    turtle.left(97)
+    turtle.fillColor(.white)
+    turtle.beginFill()
+    turtle.penDown()
+    for _ in 1 ... 4 {
+        turtle.forward(50)
+        turtle.right(90)
+    }
+    turtle.endFill()
+    turtle.right(90)
+    turtle.forward(50)
+    turtle.right(135)
+    turtle.penDown()
+    turtle.forward(35)
+    turtle.right(90)
+    turtle.forward(35)
+    turtle.penUp()
+    
 }
 
 

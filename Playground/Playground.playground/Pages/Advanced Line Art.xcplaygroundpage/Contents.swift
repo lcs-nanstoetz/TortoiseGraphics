@@ -26,7 +26,28 @@ canvas.drawing { turtle in
     turtle.curve(withSize: 30, withSize: 30, drawSides: 10)
     turtle.penUp()
     
-
+    //draw the sun
+    turtle.goto(130,130)
+    turtle.penDown()
+    turtle.curve(withSize: 30, withSize: 5, drawSides: 30)
+    turtle.penUp()
+    turtle.goto(85,100)
+    turtle.penDown()
+    turtle.right(60)
+    turtle.forward(30)
+    turtle.penUp()
+    turtle.goto(115,90)
+    turtle.left(40)
+    turtle.penDown()
+    turtle.forward(30)
+    turtle.penUp()
+    turtle.goto(75,125)
+    turtle.penDown()
+    turtle.right(90)
+    turtle.forward(30)
+    turtle.penUp()
+    
+    
 }
 
 

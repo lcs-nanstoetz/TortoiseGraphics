@@ -122,7 +122,94 @@ canvas.drawing { turtle in
     turtle.goto(55, -30)
     turtle.penUp()
     
+    //draw 1. tree
+    turtle.goto(-100,-30)
+    turtle.penDown()
+    turtle.forward(20)
+    turtle.right(30)
+    turtle.fillColor(.white)
+    turtle.beginFill()
+    for _ in 1...5{
+        for _ in 1...4{
+            turtle.curve(withSize: 30, withSize: -3, drawSides: 2)
+            turtle.right(30)
+        }
+        turtle.left(140)
+    }
+    turtle.endFill()
+    turtle.penUp()
+    turtle.left(45)
     
+    //draw 2. tree
+    turtle.goto(-70,-31)
+    turtle.penDown()
+    turtle.forward(20)
+    turtle.right(30)
+    turtle.fillColor(.white)
+    turtle.beginFill()
+    for _ in 1...5{
+        for _ in 1...4{
+            turtle.curve(withSize: 30, withSize: -3, drawSides: 2)
+            turtle.right(30)
+        }
+        turtle.left(140)
+    }
+    turtle.endFill()
+    turtle.penUp()
+    turtle.left(55)
+    
+    //draw 3. tree
+    turtle.goto(-111,-28)
+    turtle.penDown()
+    turtle.forward(20)
+    turtle.right(30)
+    turtle.fillColor(.white)
+    turtle.beginFill()
+    for _ in 1...5{
+        for _ in 1...4{
+            turtle.curve(withSize: 30, withSize: -3, drawSides: 2)
+            turtle.right(30)
+        }
+        turtle.left(140)
+    }
+    turtle.endFill()
+    turtle.penUp()
+    turtle.left(45)
+    
+    //draw 4. tree
+    turtle.goto(-75,-32)
+    turtle.penDown()
+    turtle.forward(20)
+    turtle.right(30)
+    turtle.fillColor(.white)
+    turtle.beginFill()
+    for _ in 1...5{
+        for _ in 1...4{
+            turtle.curve(withSize: 30, withSize: -3, drawSides: 2)
+            turtle.right(30)
+        }
+        turtle.left(140)
+    }
+    turtle.endFill()
+    turtle.penUp()
+    turtle.left(55)
+    
+    //draw 5. tree
+    turtle.goto(-90,-35)
+    turtle.penDown()
+    turtle.forward(20)
+    turtle.right(30)
+    turtle.fillColor(.white)
+    turtle.beginFill()
+    for _ in 1...5{
+        for _ in 1...4{
+            turtle.curve(withSize: 30, withSize: -3, drawSides: 2)
+            turtle.right(30)
+        }
+        turtle.left(140)
+    }
+    turtle.endFill()
+    turtle.penUp()
 }
 
 

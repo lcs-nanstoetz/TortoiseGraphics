@@ -242,44 +242,5 @@ public extension Tortoise {
             return false
         }
     }
-    // Adjust course to the left a bit
-    self.penUp()
-    self.forward(10)
-    self.right(5)
-    self.forward(10)
-    self.right(5)
-    
-    // Draw a dashed circle
-    for _ in 1...36 {
-    self.penUp()
-    self.forward(9)
-    self.right(5)
-    self.penDown()
-    self.forward(11)
-    self.right(5)
-    }
-    // Move drawing left a bit
-    self.penUp()
-    self.right(90)
-    self.backward(50)
-    self.left(90)
-    self.penDown()
-    self.penSize(2)
-    
-    // Draw 18 dashed circles
-    for _ in 1...18 {
-    dashedCircle(with: turtle)
-    self.right(10)
-    }
-    // Draw 18 small circles rotated around the origin
-    for _ in 1...18 {
-    self.right(20)
-    
-    // Draw a small circle
-    for _ in 1...18 {
-    self.right(20)
-    self.forward(20)
-    
-    }
-
 }
+

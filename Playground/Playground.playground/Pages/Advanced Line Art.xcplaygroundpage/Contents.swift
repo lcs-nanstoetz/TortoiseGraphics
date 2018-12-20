@@ -81,6 +81,48 @@ canvas.drawing { turtle in
     turtle.forward(35)
     turtle.penUp()
     
+    //draw fireplace
+    turtle.goto(77, 1)
+    turtle.left(135)
+    turtle.penDown()
+    turtle.fillColor(.white)
+    turtle.beginFill()
+    turtle.forward(10)
+    turtle.left(90)
+    turtle.forward(5)
+    turtle.left(90)
+    turtle.forward(10)
+    turtle.endFill()
+    turtle.penUp()
+    
+    //draw door
+    turtle.goto(75, -50)
+    turtle.right(180)
+    turtle.penDown()
+    turtle.forward(25)
+    turtle.left(90)
+    turtle.forward(10)
+    turtle.left(90)
+    turtle.forward(25)
+    turtle.penUp()
+    
+    //draw window
+    turtle.goto(35, -30)
+    turtle.right(180)
+    turtle.penDown()
+    for _ in 1...4{
+        turtle.forward(20)
+        turtle.right(90)
+    }
+    turtle.penUp()
+    turtle.goto(35, -30)
+    turtle.penDown()
+    turtle.goto(55, -10)
+    turtle.goto(35, -10)
+    turtle.goto(55, -30)
+    turtle.penUp()
+    
+    
 }
 
 
